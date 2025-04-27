@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.logo {
+  height: 80px !important;   /* Use !important to force */
+  width: auto !important;
+  object-fit: contain;
+}

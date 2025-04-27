@@ -1,40 +1,48 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import { CgWebsite } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import { Container, Row, Col } from "react-bootstrap";
+import Particle from "../Particle";
+import ProjectCard from "./ProjectCards";
 
-function ProjectCards(props) {
+function Projects() {
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
+    <Container fluid className="project-section">
+      <Particle />
+      <Container>
+        <h1 className="project-heading">
+          My <strong className="purple">Recent Projects </strong>
+        </h1>
 
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
+        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath=""
+              title="Banking Transaction Monitoring System"
+              description="Developed an AI-powered fraud detection system using Spring Boot and AWS Lambda. Implemented XGBoost and deep learning models to enhance fraud detection with a 20% reduction in false positives."
+              ghLink="#"
+            />
+          </Col>
 
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
-          </Button>
-        )}
-      </Card.Body>
-    </Card>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath=""
+              title="Big Data Analysis Using Spark"
+              description="Processed large-scale datasets for an e-commerce platform using PySpark and Hadoop, improving data processing efficiency by 40%."
+              ghLink="#"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath=""
+              title="Enterprise-Grade API Gateway"
+              description="Built a Spring Boot-based API Gateway with enhanced security (OAuth2, JWT) and optimized system response times."
+              ghLink="#"
+            />
+          </Col>
+        </Row>
+      </Container>
+    </Container>
   );
 }
-export default ProjectCards;
+
+export default Projects;
