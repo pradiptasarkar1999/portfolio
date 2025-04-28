@@ -5,7 +5,7 @@ It showcases my work, projects, resume, and technical skills.
 
 ## Live Website 🌐
 
-[Visit Portfolio](https://your-vercel-live-link.com)
+[Visit Portfolio](https://pradipta-portfolio.vercel.app/)
 
 ## Built With
 
